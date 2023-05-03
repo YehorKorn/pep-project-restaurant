@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from meal.models import Meal
+
+
+class MealListView(generic.ListView):
+    model = Meal
+
+
+class MealDetailView(generic.DetailView):
+    model = Meal
