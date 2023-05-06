@@ -1,11 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
-from meal.views import MealListView, MealDetailView
+from meal.views import MealListView, MealDetailView, index, about, menu, booking, team, contact, service
 
 urlpatterns = [
     # path("", ),
-    path("", MealListView.as_view(), name="meal-list"),
+    path("home/", index, name="index"),
+    path("about/", about, name="about"),
+    # path("menu/", menu, name="menu"),
+    path("booking/", booking, name="booking"),
+    path("team/", team, name="team"),
+    path("contact/", contact, name="contact"),
+    path("service/", service, name="service"),
+    path("menu/", MealListView.as_view(), name="menu"),
     path("<slug:slug>/", MealDetailView.as_view(), name="meal-detail"),
+
 
 ]
 
