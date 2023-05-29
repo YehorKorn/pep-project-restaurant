@@ -1,14 +1,13 @@
-from django.contrib import admin
-from django.urls import path, include
-from meal.views import MealListView, MealDetailView, index, about, menu, booking, team, contact, service
+from django.urls import path
+from meal.views import MealListView, MealDetailView, index, about, menu, booking, CookListView, contact, service
 
 urlpatterns = [
     # path("", ),
-    path("home/", index, name="index"),
+    path("", index, name="index"),
     path("about/", about, name="about"),
     # path("menu/", menu, name="menu"),
     path("booking/", booking, name="booking"),
-    path("team/", team, name="team"),
+    path("team/", CookListView.as_view(), name="team"),
     path("contact/", contact, name="contact"),
     path("service/", service, name="service"),
     path("menu/", MealListView.as_view(), name="menu"),
