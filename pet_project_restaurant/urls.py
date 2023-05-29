@@ -19,9 +19,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from main.views import (
+    # login_view,
+    UserCreateView,
+    UserLoginView,
+    UserUpdateView,
+    UserLogoutView,
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("login/", UserLoginView.as_view(), name="login"),
+    path("logout/", UserLogoutView.as_view(), name="logout"),
+    path('registration/', UserCreateView.as_view(), name="registration"),
+    path('update-data/<int:pk>/', UserUpdateView.as_view(), name="update-data"),
     path("", include("meal.urls", namespace="meal")),
+    path("main/", include("main.urls", namespace="main")),
+    # path("accounts/", include("django.contrib.auth.urls")),
 ] + (static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) +
      static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
 
