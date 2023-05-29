@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block content %}
-  {% get_media_prefix %}
-
   {% block service %}
     <!-- Service Start -->
     <div class="container-xxl py-5">
@@ -54,10 +52,6 @@
   {% block about %}
     {% include 'includes/about.html' %}
   {% endblock about %}
-
-  {% block menu %}
-    {% include "includes/menu.html" %}
-  {% endblock menu %}
 
   {% block reservation %}
     <!-- Reservation Start -->
