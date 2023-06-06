@@ -40,7 +40,7 @@
                 <div class="col-md-6">
                   <div class="form-floating">
                     {{ form.last_name }}
-                    <label for="{{ form.username.last_name }}">
+                    <label for="{{ form.last_name.id_for_label }}">
                       Last name
                       {% for error in form.last_name.errors %}
                         <span class="text-danger mb-4">{{ error }}</span>
