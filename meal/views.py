@@ -23,11 +23,6 @@ class CookListView(generic.ListView):
     context_object_name = "cook_list"
 
 
-# def team(request):
-#     """View function for the home page of the site."""
-#     return render(request, "team.html")
-
-
 def index(request):
     """View function for the home page of the site."""
     return render(request, "index.html")
@@ -52,8 +47,3 @@ def booking(request):
 def contact(request):
     """View function for the contact page of the site."""
     return render(request, "contact.html")
-
-
-def service(request):
-    """View function for the service page of the site."""
-    return render(request, "service.html")
