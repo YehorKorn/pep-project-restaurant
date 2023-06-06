@@ -14,14 +14,14 @@ class Category(models.Model):
 
 
 class Meal(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     description = models.TextField(max_length=500)
     people = models.IntegerField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     preparation_time = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="meals")
     image = models.ImageField(upload_to="meal/")
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True, unique=True)
 
     class Meta:
         ordering = ["name"]
