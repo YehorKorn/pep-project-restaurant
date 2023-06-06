@@ -1,10 +1,45 @@
-<h1>{{ meal.name }}</h1>
-<h2>{{ meal.price }}</h2>
-<h2>{{ meal.description }}</h2>
-<h2>{{ meal.preparation_time }}</h2>
-<h2>{{ meal.people }}</h2>
-<img style="object-fit: contain; width: 500px;" src="{{ meal.image.url }}" alt="Pasta">
+{% extends 'base.html' %}
+{% load static %}
 
 
+{% block content %}
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <img class="img-fluid rounded w-100 wow zoomIn " data-wow-delay="0.1s" src="{{ meal.image.url }}" style="object-fit: contain; width: 500px;">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h5 class="section-title ff-secondary text-start text-primary fw-normal">About meal</h5>
+          <h1 class="mb-4">{{ meal.name }}</h1>
+          <p class="mb-4">{{ meal.description }}</p>
+          <p class="mb-4">This dish is for {{ meal.people }} {{ meal.people|pluralize:'person,people' }}</p>
+          <div class="row g-4 mb-4">
 
-
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ meal.price }}</h1>
+                <div class="ps-4">
+                  <p class="mb-0">$</p>
+                  <h6 class="text-uppercase mb-0">Price</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ meal.preparation_time }}</h1>
+                <div class="ps-4">
+                  <p class="mb-0">Time of</p>
+                  <h6 class="text-uppercase mb-0">Preparation</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+{#          <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>#}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
