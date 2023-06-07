@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 
@@ -34,6 +35,9 @@ class Meal(models.Model):
         super(Meal, self).save(
             force_insert=False, force_update=False, using=None, update_fields=None
         )
+
+    def get_absolute_url(self):
+        return reverse("meal:meal-detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.name
