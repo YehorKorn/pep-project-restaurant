@@ -1,0 +1,114 @@
+[
+  {
+    "model": "meal.meal",
+    "pk": 9,
+    "fields": {
+      "name": "Pizza2",
+      "description": "The pizza from Italia and is very delicious.",
+      "people": "2",
+      "price": "10",
+      "preparation_time": "15",
+      "image": "meal/top-view-of-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg",
+      "category_id": "3",
+      "slug": "pizza2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 10,
+    "fields": {
+      "name": "Pasta2",
+      "description": "The best pasta in the world!",
+      "people": "1",
+      "price": "15.5",
+      "preparation_time": "30",
+      "image": "meal/Pasta-po-toskanski.jpg",
+      "category_id": "1",
+      "slug": "pasta2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 11,
+    "fields": {
+      "name": "Steak medium2",
+      "description": "Medium fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/iStock-1367897210.jpg",
+      "category_id": "1",
+      "slug": "steak-medium2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 12,
+    "fields": {
+      "name": "Steak rar2",
+      "description": "Rar fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/bg-hero.jpg",
+      "category_id": "1",
+      "slug": "steak-rar2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 13,
+    "fields": {
+      "name": "Lobster sea dish2",
+      "description": "Lobster with crab and shrimp",
+      "people": "3",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/LobsterCrabShrimpSeafoodRestaurant.jpg",
+      "category_id": "2",
+      "slug": "lobster-sea-dish2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 14,
+    "fields": {
+      "name": "Oysters sea dish2",
+      "description": "Oysters with mussels and  crab...",
+      "people": "3",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/SeafoodRestaurant_Cover.jpg",
+      "category_id": "2",
+      "slug": "oysters-sea-dish2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 15,
+    "fields": {
+      "name": "Tomato soup2",
+      "description": "Soup with tomato, meat, spices",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "40",
+      "image": "meal/Copycat-Panera-tomato-basil-soup-109_preview-ca0fe4f2bff7404494b66d7d3c77428e.jpg",
+      "category_id": "3",
+      "slug": "tomato-soup2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 16,
+    "fields": {
+      "name": "Exotic soup2",
+      "description": "Soup with vegetables, mushrooms",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "25",
+      "image": "meal/Copycat-Alley-Restaurant-Oxtail-Soup-Wide.jpg",
+      "category_id": "3",
+      "slug": "exotic-soup2"
+    }
+  }
+]
