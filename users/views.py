@@ -21,12 +21,12 @@ class UserLogoutView(views.LogoutView):
 class UserCreateView(generic.CreateView):
     model = get_user_model()
     form_class = UserForm
-    template_name = "main/user_form.html"
+    template_name = "users/user_form.html"
     success_url = reverse_lazy("users:login")
 
 
 class UserUpdateView(generic.UpdateView):
     model = get_user_model()
     form_class = UserForm
-    template_name = "main/user_form.html"
+    template_name = "users/user_form.html"
     success_url = reverse_lazy("meal:index")
