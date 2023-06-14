@@ -19,14 +19,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from users.views import (
-    # login_view,
-    UserCreateView,
-    UserLoginView,
-    UserUpdateView,
-    UserLogoutView,
-)
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("meal/", include("meal.urls", namespace="meal")),
