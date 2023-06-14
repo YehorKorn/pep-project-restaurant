@@ -5,6 +5,11 @@
     --dark: #0F172B;
 }
 
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
 .ff-secondary {
     font-family: 'Pacifico', cursive;
 }
