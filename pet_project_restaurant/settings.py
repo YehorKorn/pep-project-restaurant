@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "meal",
-    "main",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -101,11 +101,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "main.User"
+AUTH_USER_MODEL = "users.User"
 
 LOGIN_REDIRECT_URL = "/"
 
-LOGIN_URL = "/login/"
+LOGIN_URL = "/users/login/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

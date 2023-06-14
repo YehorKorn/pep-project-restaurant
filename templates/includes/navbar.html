@@ -11,27 +11,36 @@
 
   {% if user.is_authenticated %}
     <li class="nav-item nav-link">Hello <a href="">{{ user.get_username }}</a></li> |
-    <li class="nav-item nav-link"><a href="{% url 'logout'%}?next={{request.path}}">Sign-out</a></li>
+    <li class="nav-item nav-link"><a href="{% url 'users:logout'%}?next={{request.path}}">Sign-out</a></li>
   {% else %}
-    <li class="nav-item nav-link"><a href="{% url 'login'%}?next={{request.path}}">Sign-in</a></li> |
-    <li class="nav-item nav-link"><a href="{% url 'registration'%}?next={{request.path}}">Sign-up</a></li>
+    <li class="nav-item nav-link"><a href="{% url 'users:login'%}?next={{request.path}}">Sign-in</a></li> |
+    <li class="nav-item nav-link"><a href="{% url 'users:registration'%}?next={{request.path}}">Sign-up</a></li>
   {% endif %}
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav ms-auto py-0 pe-4">
       <a href="{% url 'meal:index' %}" class="nav-item nav-link active">Home</a>
-      <a href="{% url 'meal:about' %}" class="nav-item nav-link">About</a>
-      <a href="{% url 'meal:service' %}" class="nav-item nav-link">Service</a>
       <a href="{% url 'meal:menu' %}" class="nav-item nav-link">Menu</a>
       <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
         <div class="dropdown-menu m-0">
-          <a href="{% url 'meal:booking' %}" class="dropdown-item">Booking</a>
-          <a href="{% url 'meal:team' %}" class="dropdown-item">Our Team</a>
-          <a href="{% url 'login'%}?next={{request.path}}" class="dropdown-item">Login</a>
+
+          {% if user.is_staff %}
+            <a href="#" class="dropdown-item">Account</a>
+            <a href="#" class="dropdown-item">Edit Menu</a>
+            <a href="#" class="dropdown-item">Edit Menu</a>
+
+          {% endif %}
         </div>
       </div>
-      <a href="{% url 'meal:contact' %}" class="nav-item nav-link">Contact</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+        <div class="dropdown-menu m-0">
+          <a href="{% url 'meal:about' %}" class="dropdown-item">About</a>
+          <a href="{% url 'meal:team' %}" class="dropdown-item">Team</a>
+          <a href="{% url 'meal:contact' %}" class="dropdown-item">Contact</a>
+        </div>
+      </div>
     </div>
     <a href="{% url 'meal:booking' %}" class="btn btn-primary py-2 px-4">Book A Table</a>
   </div>

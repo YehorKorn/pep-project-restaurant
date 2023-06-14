@@ -18,7 +18,7 @@
               <p class="text-danger mb-4">Your username and password didn't match. Please try again.</p>
             {% endif %}
 
-            <form method="post" action="{% url 'login' %}" novalidate>
+            <form method="post" action="{% url 'users:login' %}" novalidate>
               {% csrf_token %}
               <div class="row g-3">
                 <div class="col-md-6">
@@ -40,7 +40,7 @@
               </div>
             </form>
             <br>
-            <a class="btn-link btn w-25 py-0" href="{% url 'registration' %}">Registration</a>
+            <a class="btn-link btn w-25 py-0" href="{% url 'users:registration' %}">Registration</a>
           </div>
         </div>
       </div>
