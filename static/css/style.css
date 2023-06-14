@@ -7,8 +7,48 @@
 
 .link-to-page {
     float: right;
-    margin: 0 2px 0 2px;
+    margin: 0 2px 30px 2px;
 }
+
+/* Styles for modal window delete */
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 300px;
+}
+
+.modal-content h4 {
+margin-top: 0;
+}
+
+.modal-content p {
+margin-bottom: 20px;
+}
+
+.button-group {
+display: flex;
+justify-content: space-between;
+}
+
+.modal-content button {
+flex: 1;
+margin: 0 20px;
+}
+/* Styles for modal window delete */
 
 .ff-secondary {
     font-family: 'Pacifico', cursive;
