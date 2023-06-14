@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block preview_after_navbar %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="row align-items-center g-5">
+    <div class="container">
+      <div class="row g-0">
+
+        <div class="col-md-5 p-lg-3" >
+          <div class="row g-3">
+            <img class="img-fluid rounded w-100 wow zoomIn " data-wow-delay="0.1s" src="{{ meal.image.url }}" style="object-fit: contain; width: 500px; padding-top: 60px">
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+          <div class="p-5">
+            <h3 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{{ object|yesno:"Update,Create" }} meal</h3>
+
+
+            <form method="post" action="" novalidate>
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.name }}
+                    <label for="{{ form.name.id_for_label }}">
+                      Name
+                      {% for error in form.name.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.price }}
+                    <label for="{{ form.price.id_for_label }}">
+                      Price
+                      {% for error in form.price.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.description }}
+                    <label for="{{ form.description.id_for_label }}">
+                      Description
+{#                      {% for error in form.description.errors %}#}
+{#                        <span class="text-danger mb-4">{{ error }}</span>#}
+{#                      {% endfor %}#}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.people }}
+                    <label for="{{ form.people.id_for_label }}">
+                      No Of People
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.preparation_time }}
+                    <label for="{{ form.preparation_time.id_for_label }}">
+                      Time of preparation
+                      {% if form.preparation_time.errors %}
+                        <span class="text-danger mb-4">*</span>
+                      {% endif %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.category }}
+                    <label for="{{ form.category.id_for_label }}">
+                      Category
+                      {% for error in form.category.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.image }}
+                    <label for="{{ form.image.id_for_label }}">
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.slug }}
+                    <label for="{{ form.slug.id_for_label }}">
+                      Slug
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-primary w-100 py-3" type="submit">{{ object|yesno:"Ready,Create" }}</button>
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
