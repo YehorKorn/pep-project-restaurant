@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views import generic
 
-from main.forms import UserLoginForm, UserForm
+from users.forms import UserLoginForm, UserForm
 
 
 class UserLoginView(views.LoginView):
@@ -22,7 +22,7 @@ class UserCreateView(generic.CreateView):
     model = get_user_model()
     form_class = UserForm
     template_name = "main/user_form.html"
-    success_url = reverse_lazy("login")
+    success_url = reverse_lazy("users:login")
 
 
 class UserUpdateView(generic.UpdateView):
