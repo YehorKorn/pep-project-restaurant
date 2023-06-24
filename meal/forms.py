@@ -126,5 +126,8 @@ class MealSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by model.."})
+        widget=forms.TextInput(attrs={
+            "placeholder": "Search by name of meal..",
+            "class": "form-control custom-search-input"
+        })
     )

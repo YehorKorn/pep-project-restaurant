@@ -1,5 +1,8 @@
-<form action="" method="get" class="form-inline">
-  {{ search_form.as_div }}
-
-  <input style="margin-left: 10px" type="submit" value="🔎" class="btn btn-outline-primary">
+<form action="" method="get" class="custom-search-form">
+  <div class="input-group">
+    {{ search_form }}
+    <button type="submit" class="btn btn-primary custom-search-button">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
 </form>

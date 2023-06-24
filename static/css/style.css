@@ -5,6 +5,52 @@
     --dark: #0F172B;
 }
 
+.custom-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  max-width: 300px;
+  margin: 0 auto 40px;
+
+}
+
+.custom-search-input {
+  height: 38px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  /*background-color: #f89406;*/
+  background-image: none;
+  border: 1px solid #f89406;
+  border-radius: 4px;
+}
+
+.custom-search-button {
+  color: #fff;
+  background-color: #f89406;
+  border-color: #f89406;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.custom-search-button:hover {
+  background-color: #d87c04;
+  border-color: #d87c04;
+}
+
+.custom-search-button:focus {
+  background-color: #d87c04;
+  border-color: #d87c04;
+  box-shadow: 0 0 0 0.2rem rgba(216, 124, 4, 0.5);
+}
+
+.fa-search {
+  font-size: 16px;
+}
+
 .custom-clearable-file-input {
     display:block;
     width:100%;
