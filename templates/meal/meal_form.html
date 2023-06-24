@@ -20,7 +20,7 @@
             <h3 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{{ object|yesno:"Update,Create" }} meal</h3>
 
 
-            <form method="post" action="" novalidate>
+            <form method="post" action="" novalidate enctype="multipart/form-data">
               {% csrf_token %}
               <div class="row g-3">
                 <div class="col-md-6">
@@ -90,17 +90,22 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    {{ form.image }}
-                    <label for="{{ form.image.id_for_label }}">
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-floating">
                     {{ form.slug }}
                     <label for="{{ form.slug.id_for_label }}">
                       Slug
                     </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating ">
+                    <div class="custom-clearable-file-input">
+                      {{ form.image }}
+                      <label for="{{ form.image.id_for_label }}">
+                        {% for error in form.image.errors %}
+                          <span class="text-danger mb-4">{{ error }}</span>
+                        {% endfor %}
+                      </label>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12">

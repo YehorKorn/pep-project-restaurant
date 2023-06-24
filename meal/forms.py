@@ -87,12 +87,10 @@ class MealForm(forms.ModelForm):
     )
 
     image = forms.ImageField(
-        required=False,
         error_messages={
             "required": "*"
         },
         widget=CustomClearableFileInput(attrs={
-            # "class": "form-control",
         })
     )
 

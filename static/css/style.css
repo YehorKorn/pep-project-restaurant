@@ -5,6 +5,114 @@
     --dark: #0F172B;
 }
 
+.custom-clearable-file-input {
+    display:block;
+    width:100%;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    color:#666565;
+    background-color:#fff;
+    background-clip:padding-box;
+    border:1px solid #ced4da;
+    appearance:none;
+    border-radius:2px;
+    transition:border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-clearable-file-input {
+        transition: none
+    }
+}
+
+.custom-clearable-file-input[type="file"] {
+    overflow: hidden
+}
+
+.custom-clearable-file-input[type="file"]:not(:disabled):not(:read-only) {
+    cursor: pointer
+}
+
+.custom-clearable-file-input:focus {
+    color: #666565;
+    background-color: #fff;
+    border-color: #ffd08b;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(254, 161, 22, 0.25)
+}
+
+.custom-clearable-file-input::-webkit-date-and-time-value {
+    height: 1.5em
+}
+
+.custom-clearable-file-input::placeholder {
+    /*color: #6c757d;*/
+    opacity: 1
+}
+
+.custom-clearable-file-input:disabled,
+.custom-clearable-file-input:read-only {
+    /*background-color: #e9ecef;*/
+    opacity: 1
+}
+
+.custom-clearable-file-input::file-selector-button {
+    padding: .375rem .75rem;
+    margin: -.375rem -.75rem;
+    margin-inline-end: .75rem;
+    color: #666565;
+    background-color: #e9ecef;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-clearable-file-input::file-selector-button {
+        transition: none
+    }
+}
+
+.custom-clearable-file-input:hover:not(:disabled):not(:read-only)::file-selector-button {
+    background-color: #dde0e3
+}
+
+.custom-clearable-file-input::-webkit-file-upload-button {
+    padding: .375rem .75rem;
+    margin: -.375rem -.75rem;
+    margin-inline-end: .75rem;
+    color: #666565;
+    background-color: #e9ecef;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-clearable-file-input::-webkit-file-upload-button {
+        transition: none
+    }
+}
+
+.custom-clearable-file-input:hover:not(:disabled):not(:read-only)::-webkit-file-upload-button {
+    background-color: #dde0e3
+}
+
+.input-wrapper {
+    /*text-align: center;*/
+    font-size: 14px;
+}
+
 .link-to-page {
     float: right;
     margin: 0 2px 30px 2px;
