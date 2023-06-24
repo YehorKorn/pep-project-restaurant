@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-  {% include "includes/search.html" %}
   <div class="container-xxl py-5">
     <div class="container">
       <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -43,6 +42,9 @@
             </a>
           </li>
         </ul>
+
+        {% include "includes/search.html" %}
+
         <div class="tab-content">
           <div id="tab-1" class="tab-pane fade show p-0 active">
               <div class="row g-4">
