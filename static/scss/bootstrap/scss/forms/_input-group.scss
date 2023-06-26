@@ -11,7 +11,7 @@
 
   > .form-control,
   > .form-select {
-    position: relative; // For focus state's z-index
+    position: relative; // For focus state's z-
     flex: 1 1 auto;
     width: 1%;
     min-width: 0; // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
