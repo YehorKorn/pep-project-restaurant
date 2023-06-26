@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views import generic, View
@@ -41,22 +41,31 @@ class MealDetailView(generic.DetailView):
     template_name = "meal/meal_detail.html"
 
 
-class MealUpdateView(generic.UpdateView):
+class MealUpdateView(UserPassesTestMixin, generic.UpdateView):
     model = Meal
     form_class = MealForm
     template_name = "meal/meal_form.html"
 
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
 
-class MealCreateView(LoginRequiredMixin, generic.CreateView):
+
+class MealCreateView(UserPassesTestMixin, generic.CreateView):
     model = Meal
     form_class = MealForm
     template_name = "meal/meal_form.html"
     success_url = reverse_lazy("meal:menu")
 
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
 
-class MealDeleteView(LoginRequiredMixin, generic.DeleteView):
+
+class MealDeleteView(UserPassesTestMixin, generic.DeleteView):
     model = Meal
     success_url = reverse_lazy("meal:menu")
+
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
 
 
 # class MealDeleteView(View):
