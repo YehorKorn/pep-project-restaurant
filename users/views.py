@@ -11,7 +11,7 @@ from users.forms import UserLoginForm, UserForm
 
 class UserLoginView(views.LoginView):
     form_class = UserLoginForm
-    success_url = reverse_lazy("meal:index")
+    success_url = reverse_lazy("index")
 
 
 class UserLogoutView(views.LogoutView):
@@ -29,4 +29,4 @@ class UserUpdateView(generic.UpdateView):
     model = get_user_model()
     form_class = UserForm
     template_name = "users/user_form.html"
-    success_url = reverse_lazy("meal:index")
+    success_url = reverse_lazy("index")

@@ -79,7 +79,7 @@ class CookListView(generic.ListView):
 
 def index(request):
     """View function for the home page of the site."""
-    print(reverse("meal:meal-create"))
+    # print(reverse("meal:meal-create"))
     return render(request, "index.html")
 
 
