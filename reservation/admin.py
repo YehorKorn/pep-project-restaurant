@@ -5,5 +5,5 @@ from reservation.models import Reservation
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    search_fields = ["name, email, phone, date"]
-    list_filter = ["date", "number_of_people"]
+    search_fields = ["name, email, phone, date_time"]
+    list_filter = ["date_time", "number_of_people"]
