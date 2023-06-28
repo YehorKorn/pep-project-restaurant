@@ -1,8 +1,7 @@
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy, reverse
-from django.views import generic, View
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views import generic
 
 from meal.forms import MealForm, MealSearchForm
 from meal.models import Meal, Cook, Category
