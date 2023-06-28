@@ -5,14 +5,14 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic, View
 
 from meal.forms import MealForm, MealSearchForm
-from meal.models import Meal, Cook
+from meal.models import Meal, Cook, Category
 
 
 class MealListView(generic.ListView):
     model = Meal
     template_name = "meal/menu.html"
     context_object_name = "meal_list"
-    paginate_by = 10
+    # paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(MealListView, self).get_context_data(**kwargs)
@@ -22,6 +22,8 @@ class MealListView(generic.ListView):
         context["search_form"] = MealSearchForm(initial={
             "name": name
         })
+
+        context["categories"] = Category.objects.all().order_by("pk")
 
         return context
 
@@ -68,18 +70,6 @@ class MealDeleteView(UserPassesTestMixin, generic.DeleteView):
         return self.request.user.is_authenticated and self.request.user.is_superuser
 
 
-# class MealDeleteView(View):
-#
-#     def get(self, request, meal_slug):
-#         meal = Meal.objects.get(slug=meal_slug)
-#         return render(request, 'meal/meal_form.html', {'meal': meal})
-#
-#     def post(self, request, meal_slug):
-#         meal = Meal.objects.get(slug=meal_slug)
-#         meal.delete()
-#         return redirect('meal:menu')
-
-
 class CookListView(generic.ListView):
     model = Cook
     template_name = "team.html"
@@ -88,7 +78,6 @@ class CookListView(generic.ListView):
 
 def index(request):
     """View function for the home page of the site."""
-    # print(reverse("meal:meal-create"))
     return render(request, "index.html")
 
 
@@ -100,12 +89,6 @@ def about(request):
 def menu(request):
     """View function for the menu page of the site."""
     return render(request, "meal/menu.html")
-
-
-@login_required()
-def booking(request):
-    """View function for booking."""
-    return render(request, "booking.html")
 
 
 def contact(request):
