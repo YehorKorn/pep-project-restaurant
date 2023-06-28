@@ -5,6 +5,7 @@ from django.utils.text import slugify
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
+    fa_icon = models.CharField(max_length=25)
 
     def __str__(self):
         return self.name
