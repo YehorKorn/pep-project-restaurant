@@ -21,18 +21,18 @@
     <div class="navbar-nav ms-auto py-0 pe-4">
       <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
       <a href="{% url 'meal:menu' %}" class="nav-item nav-link">Menu</a>
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
-        <div class="dropdown-menu m-0">
-
-          {% if user.is_staff %}
+      {% if user.is_authenticated %}
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+          <div class="dropdown-menu m-0">
             <a href="#" class="dropdown-item">Account</a>
-            <a href="#" class="dropdown-item">Edit Menu</a>
-            <a href="#" class="dropdown-item">Edit Menu</a>
-
-          {% endif %}
+            {% if user.is_staff %}
+              <a href="{% url 'reservation:reservation-list' %}" class="dropdown-item">Table reservation list</a>
+            {% endif %}
+          </div>
         </div>
-      </div>
+      {% endif %}
+
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
         <div class="dropdown-menu m-0">
