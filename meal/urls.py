@@ -6,7 +6,6 @@ from meal.views import (
     MealCreateView,
     MealDeleteView,
     about,
-    booking,
     CookListView,
     contact,
 )
@@ -14,7 +13,6 @@ from meal.views import (
 
 urlpatterns = [
     path("about/", about, name="about"),
-    path("booking/", booking, name="booking"),
     path("team/", CookListView.as_view(), name="team"),
     path("contact/", contact, name="contact"),
     path("menu/", MealListView.as_view(), name="menu"),
