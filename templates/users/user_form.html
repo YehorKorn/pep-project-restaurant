@@ -8,6 +8,7 @@
         <div class="col-md-3">
         </div>
         <div class="col-md-6 bg-dark d-flex align-items-center">
+          {% if request.user == user %}
           <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
             <h5 class="section-title ff-secondary text-start text-primary fw-normal">{{ object|yesno:"Update,Creation" }} account</h5>
             <h1 class="text-white mb-4">{{ object|yesno:"Update Data,Registration" }}</h1>
@@ -16,6 +17,10 @@
             {% if next %}
               <p class="text-white mb-4">Please login to see this page.</p>
             {% endif %}
+
+
+
+
 
             <!-- Message error -->
             {% if form.errors %}
@@ -99,6 +104,10 @@
               </div>
             </form>
           </div>
+          {% else %}
+            <h1 class="text-white m-auto">Page not found</h1>
+
+          {% endif %}
         </div>
       </div>
     </div>
