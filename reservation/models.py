@@ -5,7 +5,7 @@ class Reservation(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=24)
-    date_time = models.DateTimeField()
+    date_time = models.DateTimeField(help_text="Date and time when the guest arrives.")
     number_of_people = models.IntegerField()
     special_request = models.TextField(null=True, blank=True)
 
