@@ -24,7 +24,7 @@ from meal.views import index
 urlpatterns = [
     path("", index, name="index"),
     path('admin/', admin.site.urls),
-    path("meal/", include("meal.urls", namespace="meal")),
+    path("meals/", include("meal.urls", namespace="meal")),
     path("users/", include("users.urls", namespace="users")),
     path("reservation/", include("reservation.urls", namespace="reservation")),
 ] + (static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) +
