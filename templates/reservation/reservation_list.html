@@ -46,9 +46,13 @@
 
 
 
-                  <!-- Modal window to confirm deletion -->
+                  <!-- Modal window to Special Request -->
                   <div id="SpecialInfoModal" class="modal">
                     <div class="modal-content" style="min-width: 40%; max-width: 80%">
+                      <form id="confirmDeleteForm" method="POST" action="">
+                        {% csrf_token %}
+                        <button class="btn link-to-page" style="position:relative; left: 40%; top: -0.3%" id="OkaySpecialButton" type="button">❌</button>
+                      </form>
                       <h4>Special Request</h4>
                       <p>{{ reservation.special_request }}</p>
                       <form id="confirmDeleteForm" method="POST" action="">
@@ -77,16 +81,15 @@
 
 
 <script>
-  // Обработчик клика по кнопке удаления
   document.getElementById('SpecialButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Отменяем обычную отправку формы
-    document.getElementById('SpecialInfoModal').style.display = 'block'; // Показываем модальное окно
+    event.preventDefault();
+    document.getElementById('SpecialInfoModal').style.display = 'block';
   });
 
-  // Обработчик клика по кнопке отмены удаления в модальном окне
+
   document.getElementById('OkaySpecialButton').addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById('SpecialInfoModal').style.display = 'none'; // Скрываем модальное окно
+    document.getElementById('SpecialInfoModal').style.display = 'none';
   });
 </script>
 
