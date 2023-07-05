@@ -33,8 +33,13 @@
             </li>
           {% endfor %}
         </ul>
-
+        <div>
         {% include "includes/search.html" %}
+
+        {% if user.is_staff %}
+          <a class="btn btn-outline-primary" style="margin: 0; position: relative; left: 44%; bottom: 18px; href="{% url 'meal:meal-create' %}">Create new meal</a>
+        {% endif %}
+        </div>
 
         <div class="tab-content">
 
@@ -57,7 +62,7 @@
                 </div>
               {% endfor %}
             </div>
-        </div>
+          </div>
 
           {% for category in categories %}
             <div id="{{ category }}" class="tab-pane fade show p-0">
