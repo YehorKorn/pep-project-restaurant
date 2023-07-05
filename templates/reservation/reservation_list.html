@@ -51,7 +51,7 @@
                     <div class="modal-content" style="min-width: 40%; max-width: 80%">
                       <form id="confirmDeleteForm" method="POST" action="">
                         {% csrf_token %}
-                        <button class="btn link-to-page" style="position:relative; left: 20px; padding: 0" id="OkaySpecialButton" type="button">❌</button>
+                        <button id="OkaySpecialButton" aria-label="Close" class="btn-close float-end" data-bs-dismiss="modal" type="button"></button>
                       </form>
                       <h4>Special Request</h4>
                       <p>{{ reservation.special_request }}</p>
