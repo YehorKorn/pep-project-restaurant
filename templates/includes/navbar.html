@@ -10,7 +10,7 @@
   </button>
 
   {% if user.is_authenticated %}
-    <li class="nav-item nav-link">Hello <a href="">{{ user.get_username }}</a></li> |
+    <li class="nav-item nav-link">Hello <a href="{% url 'users:update-data' user.pk %}">{{ user.get_username }}</a></li> |
     <li class="nav-item nav-link"><a href="{% url 'users:logout'%}?next={{request.path}}">Sign-out</a></li>
   {% else %}
     <li class="nav-item nav-link"><a href="{% url 'users:login'%}?next={{request.path}}">Sign-in</a></li> |
