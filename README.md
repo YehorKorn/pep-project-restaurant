@@ -3,7 +3,7 @@
 Django project for watching menu, tables reservation, and managing info for admin.
 
 ## Check it out!
-[Pet-project-restaurant deployed to Render](path to page)
+[Pet-project-restaurant deployed to Render](https://restaurant-korn.onrender.com/)
 
 ### Installation
 
