@@ -1,24 +1,10 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from django.utils.safestring import mark_safe
 
 from meal.models import Meal, Category
 
 
-class CustomClearableFileInput(forms.ClearableFileInput):
-    template_with_initial = '%(input)s'
-    template_with_clear = '%(clear)s'
-
-    def render(self, name, value, attrs=None, renderer=None):
-        substitutions = {'input': super().render(name, value, attrs=attrs, renderer=renderer)}
-
-        return self.template_with_initial % substitutions
-
-
 class MealForm(forms.ModelForm):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['image'].widget.attrs.update({'class': 'form-control'})
 
     name = forms.CharField(
         error_messages={
@@ -90,7 +76,7 @@ class MealForm(forms.ModelForm):
         error_messages={
             "required": "*"
         },
-        widget=CustomClearableFileInput(attrs={
+        widget=forms.ClearableFileInput(attrs={
         })
     )
 
