@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Delete meal?</h1>
-  <form action="{% url 'meal-delete' meal.pk %}" method="post">
+  <form action="{% url 'meal:meal-delete' meal.slug %}" method="post">
     {% csrf_token %}
 
     <input type="submit" value="Yes" class="btn btn-danger">
