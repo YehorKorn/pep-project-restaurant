@@ -1,6 +1,12 @@
 # Pet-project-restaurant
 
-Django project for watching menu, tables reservation, and managing info for admin.
+It is possible to register on this site. 
+The main page, menu and detailed information about the dish, information about the restaurant, 
+its benefits and staff are available for all users. 
+It is also possible to book a table by filling out a simple form. 
+For the administrator, there are a few more features beyond those already listed. 
+The administrator can edit a dish, delete and create a new dish. 
+The administrator can also view the list of reserved tables and their special requests.
 
 ## Check it out!
 [Pet-project-restaurant deployed to Render](https://restaurant-korn.onrender.com/)
