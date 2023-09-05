@@ -1,4 +1,4 @@
-# Pet-project-restaurant
+# Online-restaurant-management
 
 It is possible to register on this site. 
 The main page, menu and detailed information about the dish, information about the restaurant, 
