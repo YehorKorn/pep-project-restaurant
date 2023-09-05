@@ -1,0 +1,47 @@
+{% load static %}
+
+<nav style="height: 98px" class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm">
+  <a href="{% url 'index' %}" class="navbar-brand p-0">
+    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restaurant</h1>
+    <!-- <img src="{% static 'img/logo.png' %}" alt="Logo"> -->
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="fa fa-bars"></span>
+  </button>
+
+  {% if user.is_authenticated %}
+    <li class="nav-item nav-link">Hello <a href="{% url 'users:update-data' user.pk %}">{{ user.get_username }}</a></li> |
+    <li class="nav-item nav-link"><a href="{% url 'users:logout'%}?next={{request.path}}">Sign-out</a></li>
+  {% else %}
+    <li class="nav-item nav-link"><a href="{% url 'users:login'%}?next={{request.path}}">Sign-in</a></li> |
+    <li class="nav-item nav-link"><a href="{% url 'users:registration'%}?next={{request.path}}">Sign-up</a></li>
+  {% endif %}
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto py-0 pe-4">
+      <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+      <a href="{% url 'meal:menu' %}" class="nav-item nav-link">Menu</a>
+      {% if user.is_authenticated %}
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+          <div class="dropdown-menu m-0">
+            <a href="#" class="dropdown-item">Account</a>
+            {% if user.is_staff %}
+              <a href="{% url 'reservation:reservation-list' %}" class="dropdown-item">Table reservation list</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+        <div class="dropdown-menu m-0">
+          <a href="{% url 'meal:about' %}" class="dropdown-item">About</a>
+          <a href="{% url 'meal:team' %}" class="dropdown-item">Team</a>
+          <a href="{% url 'meal:contact' %}" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+    </div>
+    <a href="{% url 'reservation:reservation' %}" class="btn btn-primary py-2 px-4">Book A Table</a>
+  </div>
+</nav>

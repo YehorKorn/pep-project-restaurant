@@ -1,0 +1,422 @@
+[
+  {
+    "model": "meal.meal",
+    "pk": 1,
+    "fields": {
+      "name": "Pizza",
+      "description": "The pizza from Italia and is very delicious.",
+      "people": "2",
+      "price": "10",
+      "preparation_time": "15",
+      "image": "meal/top-view-of-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg",
+      "category_id": "2",
+      "slug": "pizza"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 2,
+    "fields": {
+      "name": "Pasta",
+      "description": "The best pasta in the world!",
+      "people": "1",
+      "price": "15.5",
+      "preparation_time": "30",
+      "image": "meal/Pasta-po-toskanski.jpg",
+      "category_id": "2",
+      "slug": "pasta"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 3,
+    "fields": {
+      "name": "Steak medium",
+      "description": "Medium fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/iStock-1367897210.jpg",
+      "category_id": "3",
+      "slug": "steak-medium"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 4,
+    "fields": {
+      "name": "Steak rar",
+      "description": "Rar fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/bg-hero.jpg",
+      "category_id": "3",
+      "slug": "steak-rar"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 5,
+    "fields": {
+      "name": "Lobster sea dish",
+      "description": "Lobster with crab and shrimp",
+      "people": "4",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/LobsterCrabShrimpSeafoodRestaurant.jpg",
+      "category_id": "3",
+      "slug": "lobster-sea-dish"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 6,
+    "fields": {
+      "name": "Oysters sea dish",
+      "description": "Oysters with mussels and  crab...",
+      "people": "4",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/SeafoodRestaurant_Cover.jpg",
+      "category_id": "3",
+      "slug": "oysters-sea-dish"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 7,
+    "fields": {
+      "name": "Tomato soup",
+      "description": "Soup with tomato, meat, spices",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "40",
+      "image": "meal/Copycat-Panera-tomato-basil-soup-109_preview-ca0fe4f2bff7404494b66d7d3c77428e.jpg",
+      "category_id": "2",
+      "slug": "tomato-soup"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 8,
+    "fields": {
+      "name": "Exotic soup",
+      "description": "Soup with vegetables, mushrooms",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "25",
+      "image": "meal/Copycat-Alley-Restaurant-Oxtail-Soup-Wide.jpg",
+      "category_id": "2",
+      "slug": "exotic-soup"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 9,
+    "fields": {
+      "name": "Sandwich",
+      "description": "Sandwich with meat, cheese, butter, vegetables.",
+      "people": "1",
+      "price": "7",
+      "preparation_time": "10",
+      "image": "meal/seo-club-sandwich.jpg",
+      "category_id": "1",
+      "slug": "sandwich"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 10,
+    "fields": {
+      "name": "Pizza2",
+      "description": "The pizza from Italia and is very delicious.",
+      "people": "2",
+      "price": "10",
+      "preparation_time": "15",
+      "image": "meal/top-view-of-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg",
+      "category_id": "2",
+      "slug": "pizza2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 11,
+    "fields": {
+      "name": "Pasta2",
+      "description": "The best pasta in the world!",
+      "people": "1",
+      "price": "15.5",
+      "preparation_time": "30",
+      "image": "meal/Pasta-po-toskanski.jpg",
+      "category_id": "2",
+      "slug": "pasta2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 12,
+    "fields": {
+      "name": "Steak medium2",
+      "description": "Medium fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/iStock-1367897210.jpg",
+      "category_id": "3",
+      "slug": "steak-medium2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 13,
+    "fields": {
+      "name": "Steak rar2",
+      "description": "Rar fried steak",
+      "people": "1",
+      "price": "13.5",
+      "preparation_time": "15",
+      "image": "meal/bg-hero.jpg",
+      "category_id": "3",
+      "slug": "steak-rar2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 14,
+    "fields": {
+      "name": "Lobster sea dish2",
+      "description": "Lobster with crab and shrimp",
+      "people": "4",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/LobsterCrabShrimpSeafoodRestaurant.jpg",
+      "category_id": "3",
+      "slug": "lobster-sea-dish2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 15,
+    "fields": {
+      "name": "Oysters sea dish2",
+      "description": "Oysters with mussels and  crab...",
+      "people": "4",
+      "price": "150",
+      "preparation_time": "30",
+      "image": "meal/SeafoodRestaurant_Cover.jpg",
+      "category_id": "3",
+      "slug": "oysters-sea-dish2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 16,
+    "fields": {
+      "name": "Tomato soup2",
+      "description": "Soup with tomato, meat, spices",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "40",
+      "image": "meal/Copycat-Panera-tomato-basil-soup-109_preview-ca0fe4f2bff7404494b66d7d3c77428e.jpg",
+      "category_id": "2",
+      "slug": "tomato-soup2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 17,
+    "fields": {
+      "name": "Exotic soup2",
+      "description": "Soup with vegetables, mushrooms",
+      "people": "1",
+      "price": "25",
+      "preparation_time": "25",
+      "image": "meal/Copycat-Alley-Restaurant-Oxtail-Soup-Wide.jpg",
+      "category_id": "2",
+      "slug": "exotic-soup2"
+    }
+  },
+  {
+    "model": "meal.meal",
+    "pk": 18,
+    "fields": {
+      "name": "Sandwich2",
+      "description": "Sandwich with meat, cheese, butter, vegetables.",
+      "people": "1",
+      "price": "7",
+      "preparation_time": "10",
+      "image": "meal/seo-club-sandwich.jpg",
+      "category_id": "1",
+      "slug": "sandwich2"
+    }
+  },
+  {
+    "model": "meal.category",
+    "pk": 1,
+    "fields": {
+      "name": "BREAKFAST",
+      "fa_icon": "fa-coffee"
+    }
+  },
+  {
+    "model": "meal.category",
+    "pk": 2,
+    "fields": {
+      "name": "LUNCH",
+      "fa_icon": "fa-hamburger"
+    }
+  },
+  {
+    "model": "meal.category",
+    "pk": 3,
+    "fields": {
+      "name": "DINNER",
+      "fa_icon": "fa-utensils"
+    }
+  },
+  {
+    "model": "meal.category",
+    "pk": 4,
+    "fields": {
+      "name": "DRINK",
+      "fa_icon": "fa-glass-martini"
+    }
+  },
+  {
+    "model": "meal.cook",
+    "pk": 1,
+    "fields": {
+      "first_name": "James",
+      "last_name": "Bones",
+      "about": "Best cooker in the restaurant",
+      "position": "Chef",
+      "image": "cooker/team-3.jpg"
+    }
+  },
+  {
+    "model": "meal.cook",
+    "pk": 2,
+    "fields": {
+      "first_name": "Daniel",
+      "last_name": "Crispy",
+      "about": "She has been cooking since she was 10 years old. The youngest sous chef in the country.",
+      "position": "Sous-chef",
+      "image": "cooker/team-1.jpg"
+    }
+  },
+  {
+    "model": "meal.cook",
+    "pk": 3,
+    "fields": {
+      "first_name": "Martin",
+      "last_name": "Luter",
+      "about": "If you want to know what delicious meat means, only Martin can cook the perfect meat just for you.",
+      "position": "Meat-chet",
+      "image": "cooker/team-2.jpg"
+    }
+  },
+  {
+    "model": "meal.cook",
+    "pk": 4,
+    "fields": {
+      "first_name": "Sally",
+      "last_name": "Machmilan",
+      "about": "The Best Pastry Chef in the World",
+      "position": "Pastry-chef",
+      "image": "cooker/team-4.jpg"
+    }
+  },
+  {
+    "model": "reservation.reservation",
+    "pk": 1,
+    "fields": {
+      "name": "Yehor",
+      "email": "taras@shev.com",
+      "phone": "+38 (097) 587 31 55",
+      "number_of_people": "3",
+      "special_request": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo nemo neque saepe sint? Ab alias modi repudiandae. Delectus illo ipsum labore tempore vitae. A aperiam atque autem blanditiis cupiditate deleniti deserunt dicta dignissimos esse eveniet expedita explicabo fugit harum impedit ipsa iure libero magnam maxime nostrum numquam obcaecati officia omnis perspiciatis qui quis quo saepe sint suscipit velit vero, voluptas voluptatem voluptates voluptatum. Adipisci aperiam consequuntur debitis deleniti dignissimos itaque nemo neque non omnis optio pariatur, porro quaerat sint ullam vel! Beatae consequuntur dicta dolor eaque iste laborum nesciunt quaerat voluptatem. Debitis eaque esse excepturi illo maiores neque numquam perferendis quam quis. Ab adipisci animi at autem blanditiis cum deleniti deserunt dignissimos dolorem doloremque dolores ducimus error est ex itaque iure laboriosam minus molestiae mollitia nihil, officiis, omnis optio possimus quisquam quo, quos sequi sunt tempora tenetur veniam? Assumenda blanditiis eligendi incidunt iusto libero mollitia nesciunt saepe, unde voluptate.\n",
+      "date_time": "2023-06-28 18:50:00"
+    }
+  },
+  {
+    "model": "reservation.reservation",
+    "pk": 2,
+    "fields": {
+      "name": "Nikolas",
+      "email": "Shevchenko@gmail.com",
+      "phone": "+38 (096) 076 34 49",
+      "number_of_people": "4",
+      "special_request": "",
+      "date_time": "2023-06-28 18:50:00"
+    }
+  },
+  {
+    "model": "reservation.reservation",
+    "pk": 3,
+    "fields": {
+      "name": "Oleksiy",
+      "email": "goodidea2923@gmail.com",
+      "phone": "+38 (097) 517 53 90",
+      "number_of_people": "1",
+      "special_request": "",
+      "date_time": "2023-06-28 18:50:00"
+    }
+  },
+  {
+    "model": "reservation.reservation",
+    "pk": 4,
+    "fields": {
+      "name": "Georgy",
+      "email": "somepost1023@gmail.com",
+      "phone": "+38 (097) 081 84 51",
+      "number_of_people": "4",
+      "special_request": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo nemo neque saepe sint? Ab alias modi repudiandae. Delectus illo ipsum labore tempore vitae. A aperiam atque autem blanditiis cupiditate deleniti deserunt dicta dignissimos esse eveniet expedita explicabo fugit harum impedit ipsa iure libero magnam maxime nostrum numquam obcaecati officia omnis perspiciatis qui quis quo saepe sint suscipit velit vero, voluptas voluptatem voluptates voluptatum. Adipisci aperiam consequuntur debitis deleniti dignissimos itaque nemo neque non omnis optio pariatur, porro quaerat sint ullam vel! Beatae consequuntur dicta dolor eaque iste laborum nesciunt quaerat voluptatem. Debitis eaque esse excepturi illo maiores neque numquam perferendis quam quis. Ab adipisci animi at autem blanditiis cum deleniti deserunt dignissimos dolorem doloremque dolores ducimus error est ex itaque iure laboriosam minus molestiae mollitia nihil, officiis, omnis optio possimus quisquam quo, quos sequi sunt tempora tenetur veniam? Assumenda blanditiis eligendi incidunt iusto libero mollitia nesciunt saepe, unde voluptate.\n",
+      "date_time": "2023-06-26 18:51:00"
+    }
+  },
+  {
+    "model": "reservation.reservation",
+    "pk": 5,
+    "fields": {
+      "name": "Diana",
+      "email": "greatmood2023@gmail.com",
+      "phone": "+38 (063) 320-07-03",
+      "number_of_people": "3",
+      "special_request": "",
+      "date_time": "2023-06-26 21:00:00"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$MBrLd5oVvjcStQEDAgVFFZ$JjFetuUkhYjAS0j4xWUfP0Kpd2/1l12fVLyZGZFXiV4=",
+      "last_login": "2023-06-28 18:27:19.189463",
+      "is_superuser": "1",
+      "username": "AdminUser",
+      "first_name": "Yehor",
+      "last_name": "Kornev",
+      "email": "email.23@gmail.com",
+      "is_staff": "1",
+      "is_active": "1",
+      "date_joined": "2023-06-24 18:24:12.410140"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$0Fbal08LJI0NfQTnhoU5To$1JAt+kmDC27PwoBQIzqyLlLDxB9NMwHyQnvzjImq4qo=",
+      "last_login": "2023-06-28 18:27:02.640642",
+      "is_superuser": "0",
+      "username": "Marter12",
+      "first_name": "Martin",
+      "last_name": "Luter",
+      "email": "taras@shev.com",
+      "is_staff": "0",
+      "is_active": "1",
+      "date_joined": "2023-06-26 17:23:48.038689"
+    }
+  }
+]

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Menu</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h1 class="mb-5">Table reservation list</h1>
+      </div>
+      <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+
+        {% include "includes/search.html" %}
+
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+              <div class="row g-4">
+
+                {% for reservation in reservation_list %}
+
+                  <div class="col-lg-6">
+                      <div class="d-flex align-items-center">
+                        <div class="w-100 d-flex flex-column text-start ps-4">
+                          <h5 class="d-flex justify-content-between border-bottom pb-2">
+                            <span>
+                              {{ reservation.name }}
+                              <span style="font-size: 80%; color: #484848">(For {{ reservation.number_of_people }} {{ reservation.number_of_people|pluralize:'person,people' }})</span>
+                            </span>
+                            <span class="text-primary">{{ reservation.phone }}</span>
+                          </h5>
+                          <small class="fst-italic d-flex justify-content-between pb-3">
+                            {{ reservation.date_time }}
+                            {% if reservation.special_request %}
+                              <button style="border-radius: 5px; " class=" btn-outline-success" id="SpecialButton" type="submit">
+                                Special Request
+                              </button>
+                            {% endif %}
+                            <span>{{ reservation.email }}</span>
+                          </small>
+                        </div>
+                      </div>
+                  </div>
+
+
+
+                  <!-- Modal window to Special Request -->
+                  <div id="SpecialInfoModal" style="z-index: 2" class="modal">
+                    <div class="modal-content" style="min-width: 40%; max-width: 80%">
+                      <form id="confirmDeleteForm" method="POST" action="">
+                        {% csrf_token %}
+                        <button id="OkaySpecialButton" aria-label="Close" class="btn-close float-end" data-bs-dismiss="modal" type="button"></button>
+                      </form>
+                      <h4>Special Request</h4>
+                      <p>{{ reservation.special_request }}</p>
+                      <form id="confirmDeleteForm" method="POST" action="">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-success" id="OkaySpecialButton" type="button">Okay</button>
+                      </form>
+                    </div>
+                  </div>
+
+
+                {% endfor %}
+
+              </div>
+          </div>
+        </div>
+
+        <div class="nav nav-pills d-inline-flex justify-content-center mb-5 mt-5">
+          {% include "includes/pagination.html" %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+<script>
+  document.getElementById('SpecialButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('SpecialInfoModal').style.display = 'block';
+  });
+
+
+  document.getElementById('OkaySpecialButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('SpecialInfoModal').style.display = 'none';
+  });
+</script>
+
+{% endblock content %}

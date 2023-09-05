@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <img class="img-fluid rounded w-100 wow zoomIn " data-wow-delay="0.1s" src="{{ meal.image.url }}" style="object-fit: contain; width: 500px;">
+          </div>
+        </div>
+        <div class="col-lg-6">
+
+          {% if user.is_staff %}
+            <form id="deleteForm" method="POST" action="{% url 'meal:meal-delete' meal.slug %}">
+              {% csrf_token %}
+              <button class="btn btn-outline-danger link-to-page" id="deleteButton" type="submit">Delete</button>
+            </form>
+
+            <a class="btn btn-outline-primary link-to-page" href="{% url 'meal:meal-update' meal.slug %}">Update</a>
+          {% endif %}
+
+          <h5 class="section-title ff-secondary text-start text-primary fw-normal">About meal</h5>
+          <h1 class="mb-4">{{ meal.name }}</h1>
+          <p class="mb-4">{{ meal.description }}</p>
+          <p class="mb-4">This dish is for {{ meal.people }} {{ meal.people|pluralize:'person,people' }}</p>
+          <div class="row g-4 mb-4">
+
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ meal.price }}</h1>
+                <div class="ps-4">
+                  <p class="mb-0">$</p>
+                  <h6 class="text-uppercase mb-0">Price</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ meal.preparation_time }}</h1>
+                <div class="ps-4">
+                  <p class="mb-0">Time of</p>
+                  <h6 class="text-uppercase mb-0">Preparation</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+{#          <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>#}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Modal window to confirm deletion -->
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <h4>Confirm deletion</h4>
+    <p>Are you sure you want to remove this meal?</p>
+    <form id="confirmDeleteForm" method="POST" action="{% url 'meal:meal-delete' meal.slug %}">
+      {% csrf_token %}
+      <button class="btn btn-danger" id="confirmDeleteButton" type="submit">Delete</button>
+      <button class="btn btn-secondary" id="cancelDeleteButton" type="button">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Обработчик клика по кнопке удаления
+  document.getElementById('deleteButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Отменяем обычную отправку формы
+    document.getElementById('deleteModal').style.display = 'block'; // Показываем модальное окно
+  });
+
+  // Обработчик клика по кнопке отмены удаления в модальном окне
+  document.getElementById('cancelDeleteButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('deleteModal').style.display = 'none'; // Скрываем модальное окно
+  });
+</script>
+
+{% endblock %}

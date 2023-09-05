@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Menu</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+        <h1 class="mb-5">Most Popular Items</h1>
+      </div>
+      <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+        <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+          <li class="nav-item">
+            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#All-menu">
+              <i class="fa fa-book-open fa-2x text-primary"></i>
+              <div class="ps-3">
+                <h6 class="mt-n1 mb-0">ALL MENU</h6>
+              </div>
+            </a>
+          </li>
+          {% for category in categories %}
+            <li class="nav-item">
+              <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" data-bs-toggle="pill" href="#{{ category }}">
+                <i class="fa {{ category.fa_icon }} fa-2x text-primary"></i>
+                <div class="ps-3">
+                  <h6 class="mt-n1 mb-0">{{ category }}</h6>
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div>
+        {% include "includes/search.html" %}
+
+        {% if user.is_staff %}
+          <a class="btn btn-outline-primary" style="margin: 0; position: relative; left: 44%; bottom: 18px;" href="{% url 'meal:meal-create' %}">Create new meal</a>
+        {% endif %}
+        </div>
+
+        <div class="tab-content">
+
+          <div id="All-menu" class="tab-pane fade show p-0 active">
+            <div class="row g-4">
+              {% for meal in meal_list %}
+                <div class="col-lg-6">
+                  <a href="{% url 'meal:meal-detail' slug=meal.slug %}" style="color: #727272">
+                    <div class="d-flex align-items-center">
+                      <img class="flex-shrink-0 img-fluid rounded" src="{{ meal.image.url }}" alt="" style="width: 80px;">
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                          <span>{{ meal.name }}</span>
+                          <span class="text-primary">${{ meal.price }}</span>
+                        </h5>
+                        <small class="fst-italic">{{ meal.description }}</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          {% for category in categories %}
+            <div id="{{ category }}" class="tab-pane fade show p-0">
+                <div class="row g-4">
+                  {% for meal in meal_list %}
+                    {% if meal.category.name == category.name %}
+                      <div class="col-lg-6">
+                        <a href="{% url 'meal:meal-detail' slug=meal.slug %}" style="color: #727272">
+                          <div class="d-flex align-items-center">
+                            <img class="flex-shrink-0 img-fluid rounded" src="{{ meal.image.url }}" alt="" style="width: 80px;">
+                            <div class="w-100 d-flex flex-column text-start ps-4">
+                              <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                <span>{{ meal.name }}</span>
+                                <span class="text-primary">${{ meal.price }}</span>
+                              </h5>
+                              <small class="fst-italic">{{ meal.description }}</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="nav nav-pills d-inline-flex justify-content-center mb-5 mt-5">
+          {% include "includes/pagination.html" %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

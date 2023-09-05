@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block preview_after_navbar %}
+
+  <div class="row align-items-center g-5">
+    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row g-0">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 bg-dark d-flex align-items-center">
+          {% if request.user == user %}
+          <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-primary fw-normal">{{ object|yesno:"Update,Creation" }} account</h5>
+            <h1 class="text-white mb-4">{{ object|yesno:"Update Data,Registration" }}</h1>
+
+            <!-- Message is there is next page -->
+            {% if next %}
+              <p class="text-white mb-4">Please login to see this page.</p>
+            {% endif %}
+
+
+
+
+
+            <!-- Message error -->
+            {% if form.errors %}
+              <p class="text-danger mb-2">Please fill in all fields</p>
+            {% endif %}
+
+            <!-- Form registration -->
+            <form method="post" action="" novalidate>
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.first_name }}
+                    <label for="{{ form.first_name.id_for_label }}">
+                      First name
+                      {% if form.errors.first_name %}
+                        <span class="text-danger mb-4">*</span>
+                      {% endif %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.last_name }}
+                    <label for="{{ form.last_name.id_for_label }}">
+                      Last name
+                      {% for error in form.last_name.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.email }}
+                    <label for="{{ form.email.id_for_label }}">
+                      Email
+                      {% for error in form.email.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.username }}
+                    <label for="{{ form.username.id_for_label }}">
+                      Username
+                      {% for error in form.username.errors %}
+                        <span class="text-danger mb-4">{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.password1 }}
+                    <label for="{{ form.password1.id_for_label }}">
+                      Password
+                      {% if form.password2.errors %}
+                        <span class="text-danger mb-4">*</span>
+                      {% endif %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    {{ form.password2 }}
+                    <label for="{{ form.password2.id_for_label }}">
+                      Сonfirm password
+                      {% for error in form.password2.errors %}
+                        <span class="text-danger mb-4">*{{ error }}</span>
+                      {% endfor %}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-primary w-100 py-3" type="submit">{{ object|yesno:"Ready,Registration" }}</button>
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+              </div>
+            </form>
+          </div>
+          {% else %}
+            <h1 class="text-white m-auto">Page not found</h1>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

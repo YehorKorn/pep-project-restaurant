@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block preview_after_navbar %}
+
+  <div class="row align-items-center g-5">
+    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row g-0">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-primary fw-normal">Authenticate</h5>
+            <h1 class="text-white mb-4">Log-In</h1>
+            {% if next %}
+              <p class="text-white mb-4">Please login to see this page.</p>
+            {% endif %}
+            {% if form.errors %}
+              <p class="text-danger mb-4">Your username and password didn't match. Please try again.</p>
+            {% endif %}
+
+            <form method="post" action="{% url 'users:login' %}" novalidate>
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.username }}
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    {{ form.password }}
+                    <label for="{{ form.password.id_for_label }}">Password</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-primary w-100 py-3" type="submit">Login</button>
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+              </div>
+            </form>
+            <br>
+            <a class="btn-link btn w-25 py-0" href="{% url 'users:registration' %}">Registration</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
