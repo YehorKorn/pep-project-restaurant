@@ -1,4 +1,4 @@
-# Online-restaurant-management
+# FeastFlow: Online Restaurant Operations Management
 
 It is possible to register on this site. 
 The main page, menu and detailed information about the dish, information about the restaurant, 
